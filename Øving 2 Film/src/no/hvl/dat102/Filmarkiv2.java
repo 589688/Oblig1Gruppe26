@@ -31,8 +31,8 @@ public class Filmarkiv2 implements FILMarkivADT {
 	}
 
 	/*
-	 * Skal slette første forekomst av filmnr, håndterer tomt arkiv
-	 * Kan ryddes opp, unødvendig å sjekke start? Unødvendig å deklarere hjelpevariabler?
+	 * Slette første forekomst av filmnr, håndterer tomt arkiv
+	 * Kunne blitt ryddet opp, litt mange hjelpevariabler?
 	 */
 	
 	@Override

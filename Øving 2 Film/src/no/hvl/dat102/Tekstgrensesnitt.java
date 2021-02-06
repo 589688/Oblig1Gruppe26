@@ -6,33 +6,33 @@ import no.hvl.dat102.adt.FILMarkivADT;
 
 public class Tekstgrensesnitt {
 	
+	public final static Scanner TAST = new Scanner(System.in);
+	
 	// lese opplysningene om en FILM fra tastatur, lage nytt Film objekt med disse opplysnignene
 	 public Film lesFilm() {
 		 
-		 Scanner skanner = new Scanner(System.in);
-		 
-		 System.out.println("Skriv inn filmnr:");
-		 int nr = skanner.nextInt();
+		 System.out.println("Skriv filmnr");
+		 int nr = TAST.nextInt();
 		 
 		 System.out.println("Skriv filmskaper:");
-		 String skaper = skanner.next();
-		 skaper += skanner.nextLine();
+		 String skaper = TAST.next();
+		 skaper += TAST.nextLine();
 		 
 		 System.out.println("Skriv filmtittel: ");
-		 String tittel = skanner.next();
-				tittel += skanner.nextLine();
+		 String tittel = TAST.next();
+				tittel += TAST.nextLine();
 		 
 		 System.out.println("Skriv utgivelsesår: ");
-		 int aar = skanner.nextInt();
+		 int aar = TAST.nextInt();
 		 
 		 System.out.println("Skriv filmsjanger: ");
-		 String sj = skanner.next();
-		 sj += skanner.nextLine();
+		 String sj = TAST.next();
+		 sj += TAST.nextLine();
 		 Sjanger sjanger = Sjanger.finnSjanger(sj);
 		
 		 System.out.println("Skriv filmselskap: ");
-		 String selskap = skanner.next();
-		 selskap += skanner.nextLine();
+		 String selskap = TAST.next();
+		 selskap += TAST.nextLine();
 		
 		 
 		Film film = new Film(nr, skaper, tittel, aar, sjanger, selskap);

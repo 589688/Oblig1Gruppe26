@@ -15,9 +15,8 @@ public class Meny {
 	public Meny() {
 		tekstgr = new Tekstgrensesnitt();
 		
-		Scanner skanner = new Scanner(System.in);
 		System.out.println("Håndtering av filmarkiv: Skriv 1 for nytt arkiv eller 0 for eksisterende:");
-		int valg = skanner.nextInt();
+		int valg = Tekstgrensesnitt.TAST.nextInt();
 		
 		switch (valg) {
 		
@@ -41,7 +40,6 @@ public class Meny {
 	}
 	
 	public void start() {
-		Scanner skanner = new Scanner(System.in);
 		
 		//Legge inn filmer fra konsollen, kan legge inn så mange man vil til man velger å avslutte
 		int valg;
@@ -49,7 +47,7 @@ public class Meny {
 		filma.leggTilFilm(tekstgr.lesFilm());
 		
 		System.out.println("Skriv 1 for å ligge til enda en film, skriv 0 for å avslutte inlegg");
-		valg = skanner.nextInt();
+		valg = Tekstgrensesnitt.TAST.nextInt();
 		
 		}
 		while (valg == 1);
@@ -61,16 +59,16 @@ public class Meny {
 		System.out.println("Her kommer litt statistikk fra filmarkivet\n");
 		tekstgr.skrivUtStatistikk(filma);
 		System.out.println("\n Skriv en del av navnet på filmen for å se om den finnes i arkivet: ");
-		String filmDelstreng = skanner.next();
-		filmDelstreng += skanner.nextLine();
+		String filmDelstreng = Tekstgrensesnitt.TAST.next();
+		filmDelstreng += Tekstgrensesnitt.TAST.nextLine();
 		tekstgr.skrivUtFilmDelstrengITittel(filma, filmDelstreng);
 		System.out.println("\n Skriv en del av navnet på en regissør/produsent for å se om filmer av dem finnes i arkivet");
-		String skaperDelstreng = skanner.next();
-		skaperDelstreng += skanner.nextLine();
+		String skaperDelstreng = Tekstgrensesnitt.TAST.next();
+		skaperDelstreng += Tekstgrensesnitt.TAST.nextLine();
 		tekstgr.skrivUtFilmProdusent(filma, skaperDelstreng);
 		
-		System.out.println("Skriv inn nr på film du vil slette fra arkivet");
-		if (filma.slettFilm(skanner.nextInt())) {
+		System.out.println("Skriv inn nr på film du vil slette fra arkivet (-1 hvis du ikke vil slette noen)");
+		if (filma.slettFilm(Tekstgrensesnitt.TAST.nextInt())) {
 			System.out.println("Film ble slettet");
 		}
 		else {
@@ -79,6 +77,6 @@ public class Meny {
 		
 		Fil.skrivTilFil(filma, FILNAVN);
 		System.out.println("Filmarkiv burde nå være lagret på fil");
-		skanner.close();
+		Tekstgrensesnitt.TAST.close();
 }
 }

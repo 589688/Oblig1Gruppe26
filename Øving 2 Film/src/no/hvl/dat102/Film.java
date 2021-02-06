@@ -8,14 +8,15 @@ private String tittel;
 private int aar;
 private Sjanger sjanger;
 private String filmselskap;
-/*
- * Forbedring: Endre filmnr til å bli automatisk tildelt, slik at vi ikke får duplikater
- * Nå leses filmnr inn, dette kan være problematisk
- */
 
 public Film() {
 	
 }
+
+/*
+ * Konstruktør som gir filmnr gitt som parameter (brukt til innlesing)
+ * Mulighet for forbedring: Tildele et ubrukt filmnr automatisk ved innlesing av ny film
+ */
 
 public Film(int filmnr, String skaper, String tittel, int aar, Sjanger sjanger, String selskap) {
 	this.filmnr = filmnr;
